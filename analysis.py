@@ -81,9 +81,9 @@ while running:
             if lastPosition == None:
                 pass
             elif float(d[0]) > 0:
-                pygame.draw.circle(screen, RED, lastPosition, circle_radius)
-            else:
                 pygame.draw.circle(screen, BLUE, lastPosition, circle_radius)
+            else:
+                pygame.draw.circle(screen, RED, lastPosition, circle_radius)
         elif d[0:2] == ["Current", "position:"]:
             lastPosition = tuple([float(i.split("=")[1])*10+350 for i in [d[2], d[4]]])
 
