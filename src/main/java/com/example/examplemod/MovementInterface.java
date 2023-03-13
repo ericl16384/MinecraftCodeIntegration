@@ -1,5 +1,7 @@
 package com.example.examplemod;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.player.LocalPlayer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -56,9 +58,12 @@ public class MovementInterface {
 
     static void update() {
 //        if (!hasFocus()) { return; }
-
         if (!active) { wasActive = false; return; }
 
+        LocalPlayer player = Minecraft.getInstance().player;
+
+        // position
+        // TODO replace with editing the player
         try {
             Robot robot = new Robot();
 
@@ -70,6 +75,13 @@ public class MovementInterface {
         } catch (AWTException e) {
             ExampleMod.LOGGER.debug("new Robot() failed with AWTException: " + e.getMessage());
         }
+
+        // angle
+        player.setYRot(MathUtil.convertRadiansToMinecraftDegrees(yaw));
+        player.setXRot(MathUtil.convertRadiansToMinecraftDegrees(pitch));
+
+        // other
+        // player.setSprinting
 
 
         wasActive = true;

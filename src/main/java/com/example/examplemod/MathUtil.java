@@ -9,7 +9,7 @@ public class MathUtil {
         return java.lang.Math.toRadians(x + 90);
     }
 
-    public static double convertRadiansToMinecraftDegrees(double x) {
-        return java.lang.Math.toDegrees(x) - 90;
+    public static float convertRadiansToMinecraftDegrees(double x) {
+        return (float)  java.lang.Math.toDegrees(x) - 90;
     }
 }
