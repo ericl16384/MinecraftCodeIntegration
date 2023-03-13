@@ -29,15 +29,15 @@ public class PlayerDriver {
     }
 
 
-    static long lastRenderEvent = Long.MAX_VALUE;
-
-    @SubscribeEvent
-    static public void onRenderTick(TickEvent.RenderTickEvent event) {
-        lastRenderEvent = new Date().getTime();
-    }
-
-    static boolean hasFocus() {
-//        return Minecraft.getMinecraft().inGameHasFocus;
-        return (lastRenderEvent - new Date().getTime()) < 100;
-    }
+//    static long lastRenderEvent = Long.MAX_VALUE;
+//
+//    @SubscribeEvent
+//    static public void onRenderTick(TickEvent.RenderTickEvent event) {
+//        lastRenderEvent = new Date().getTime();
+//    }
+//
+//    static boolean hasFocus() {
+////        return Minecraft.getMinecraft().inGameHasFocus;
+//        return (lastRenderEvent - new Date().getTime()) < 100;
+//    }
 }
