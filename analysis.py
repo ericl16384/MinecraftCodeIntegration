@@ -15,7 +15,7 @@ pygame.display.set_caption("My Pygame Window")
 
 
 fileLength = 0
-def getNewData():
+def getNewdataLines():
     global fileLength
 
     # Open the file for reading
@@ -27,18 +27,20 @@ def getNewData():
 
     if len(lines) > fileLength:
         lines = lines[fileLength:]
-        fileLength = len(lines)
-    elif len(lines) > fileLength:
-        screen.fill(BLACK)
 
-    data = []
+    elif len(lines) < fileLength:
+        screen.fill(BLACK)
+        
+    fileLength = len(lines)
+
+    dataLines = []
     for l in lines:
         sections = l.split(" ")
         if len(sections) > 4 and sections[4] == "[com.example.examplemod.ExampleMod/]:":
             if sections[5:7] == ["Current", "position:"]:
-                data.append(sections[7:])
+                dataLines.append(sections[7:])
     
-    return data
+    return dataLines
 
 
 
@@ -73,7 +75,7 @@ while running:
             running = False
 
     # Draw the circle
-    for d in getNewData():
+    for d in getNewdataLines():
         point = tuple([float(i.split("=")[1])*10+350 for i in [d[0], d[2]]])
         pygame.draw.circle(screen, BLUE, point, circle_radius)
 

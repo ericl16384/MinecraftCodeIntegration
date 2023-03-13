@@ -43,13 +43,15 @@ public class PlayerDriver {
 //        MovementInterface.active = true;
 //        MovementInterface.forward = WorldInterface.x < 0;
 
-        double targetX = 3;
-        double targetZ = 4;
+        double targetX = 0;
+        double targetZ = 0;
 
         double displacementX = targetX - WorldInterface.x;
         double displacementZ = targetZ - WorldInterface.z;
 
         double dotProduct = Math.dot(WorldInterface.facingX2, WorldInterface.facingZ2, displacementX, displacementZ);
+
+        ExampleMod.LOGGER.debug("" + dotProduct);
 
         MovementInterface.active = true;
         MovementInterface.forward = dotProduct > 0;
