@@ -25,7 +25,7 @@ public class PlayerDriver {
 
     @SubscribeEvent
     public static void onClientTick(TickEvent.ClientTickEvent event) {
-        ExampleMod.LOGGER.debug("hasFocus=" + hasFocus());
+        ExampleMod.LOGGER.debug("hasFocus=" + hasFocus() + " lastRenderEvent=" + lastRenderEvent);
     }
 
 

@@ -9,7 +9,7 @@ import static com.example.examplemod.ExampleMod.MODID;
 public class MovementInterface {
     // whether it is in control
     static boolean active = false;
-    static boolean blockUser = true;
+    static boolean blockUser = false;
 //    static
 
     static boolean forward = false;
