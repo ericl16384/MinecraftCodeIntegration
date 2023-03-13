@@ -18,6 +18,7 @@ while true; do
 done
 
 git add *
+git status
 
 echo "Type commit message to commit and push."
 IFS= read -r msg
