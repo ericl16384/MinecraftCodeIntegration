@@ -49,7 +49,7 @@ public class PlayerDriver {
         ExampleMod.LOGGER.debug("" + dotProduct);
 
         MovementInterface.active = true;
-        MovementInterface.forward = dotProduct > 0;
+        MovementInterface.forward = dotProduct > Math.cos(Math.toRadians(15)); // plus or minus 15 deg
     }
 
 //
