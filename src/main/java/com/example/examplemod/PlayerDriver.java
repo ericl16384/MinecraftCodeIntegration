@@ -54,7 +54,7 @@ public class PlayerDriver {
         ExampleMod.LOGGER.debug("" + dotProduct);
 
         MovementInterface.active = true;
-        MovementInterface.forward = dotProduct > 0;
+        MovementInterface.forward = dotProduct < 0;
     }
 
 //
