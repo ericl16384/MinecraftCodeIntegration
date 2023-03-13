@@ -36,11 +36,9 @@ public class PlayerDriver {
     }
 
     public static void update() {
-        if (WorldInterface.x < 0) {
-            MovementInterface.forward = true;
-        } else {
-            MovementInterface.forward = false;
-        }
+        MovementInterface.forward = true;
+
+        MovementInterface.active = WorldInterface.x < 0;
     }
 
 //

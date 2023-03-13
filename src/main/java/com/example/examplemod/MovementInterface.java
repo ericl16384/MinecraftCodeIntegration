@@ -25,6 +25,8 @@ public class MovementInterface {
 
     // whether it is in control
     static boolean active = false;
+
+    // TODO implement blocking the user's control
     static boolean blockUser = false;
 //    static
 
@@ -60,6 +62,8 @@ public class MovementInterface {
 
     public static void update() {
 //        if (!hasFocus()) { return; }
+
+        if (!active) { return; }
 
         try {
             Robot robot = new Robot();
