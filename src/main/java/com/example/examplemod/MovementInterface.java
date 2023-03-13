@@ -81,8 +81,8 @@ public class MovementInterface {
         }
 
         // angle
-        player.setYRot(MathUtil.convertRadiansToMinecraftDegrees(yaw));
-        player.setXRot(MathUtil.convertRadiansToMinecraftDegrees(pitch));
+        player.setYRot((float) (Math.toDegrees(yaw) - 90));
+        player.setXRot((float) Math.toDegrees(pitch));
 
         // other
         // player.setSprinting

@@ -11,8 +11,8 @@ public class WorldInterface {
     static double y;
     static double z;
 
-    static float yawMinecraftDegrees;
-    static float pitchMinecraftDegrees;
+    static float yawDegrees;
+    static float pitchDegrees;
     static double yawRadians;
     static double pitchRadians;
 
@@ -37,10 +37,10 @@ public class WorldInterface {
             y = player.getY();
             z = player.getZ();
 
-            yawMinecraftDegrees = player.getYRot();
-            pitchMinecraftDegrees = player.getXRot();
-            yawRadians = MathUtil.convertMinecraftDegreesToRadians(yawMinecraftDegrees);
-            pitchRadians = MathUtil.convertMinecraftDegreesToRadians(pitchMinecraftDegrees);
+            yawDegrees = player.getYRot() + 90;
+            pitchDegrees = player.getXRot();
+            yawRadians = Math.toRadians(yawDegrees);
+            pitchRadians = Math.toRadians(pitchDegrees);
 
             facingX2 = Math.cos(yawRadians);
             facingZ2 = Math.sin(yawRadians);
