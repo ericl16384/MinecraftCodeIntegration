@@ -2,12 +2,6 @@ package com.example.examplemod;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-
-import static com.example.examplemod.ExampleMod.MODID;
 
 //@Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 public class WorldInterface {
@@ -17,8 +11,14 @@ public class WorldInterface {
     static double y;
     static double z;
 
-    static float yaw;
-    static float pitch;
+    static float yawDegrees;
+    static float pitchDegrees;
+    static double yawRadians;
+    static double pitchRadians;
+
+    // unit vector representing facing in 2 dimensions (yaw)
+    static double facingX2;
+    static double facingZ2;
 
 //    @SubscribeEvent
 //    public static void onClientTick(TickEvent.ClientTickEvent event) {
@@ -33,11 +33,16 @@ public class WorldInterface {
             y = player.getY();
             z = player.getZ();
 
-            yaw = player.getYRot();
-            pitch = player.getXRot();
+            yawDegrees = player.getYRot();
+            pitchDegrees = player.getXRot();
+            yawRadians = Math.toRadians(yawDegrees);
+            pitchRadians = Math.toRadians(pitchDegrees);
+
+            facingX2 = Math.cos(yawRadians);
+            facingZ2 = Math.sin(yawRadians);
 
             ExampleMod.LOGGER.debug("Current position: X=" + x + " Y=" + y + " Z=" + z);
-            ExampleMod.LOGGER.debug("Current angles: YAW=" + yaw + " PITCH=" + pitch);
+            ExampleMod.LOGGER.debug("Current angles: YAW=" + yawDegrees + " PITCH=" + pitchDegrees);
         }
     }
 }

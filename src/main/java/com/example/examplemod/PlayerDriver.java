@@ -1,5 +1,6 @@
 package com.example.examplemod;
 
+import com.example.examplemod.util.Math;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -39,7 +40,19 @@ public class PlayerDriver {
 //        MovementInterface.forward = true;
 //        MovementInterface.active = WorldInterface.x < 0;
 
-        MovementInterface.forward = WorldInterface.x < 0;
+//        MovementInterface.active = true;
+//        MovementInterface.forward = WorldInterface.x < 0;
+
+        double targetX = 3;
+        double targetZ = 4;
+
+        double displacementX = targetX - WorldInterface.x;
+        double displacementZ = targetZ - WorldInterface.z;
+
+        double dotProduct = Math.dot(WorldInterface.facingX2, WorldInterface.facingZ2, displacementX, displacementZ);
+
+        MovementInterface.active = true;
+        MovementInterface.forward = dotProduct > 0;
     }
 
 //
