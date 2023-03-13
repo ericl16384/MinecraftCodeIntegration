@@ -53,7 +53,8 @@ public class PlayerDriver {
 
         ExampleMod.LOGGER.debug("" + dotProduct);
 
-        MovementInterface.active = true;
+        // TODO remove comment
+//        MovementInterface.active = true;
         MovementInterface.forward = dotProduct < 0;
     }
 
