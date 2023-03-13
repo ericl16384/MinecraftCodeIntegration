@@ -29,7 +29,7 @@ public class PlayerDriver {
     }
 
 
-    static long lastRenderEvent = 0;
+    static long lastRenderEvent = Long.MAX_VALUE;
 
     @SubscribeEvent
     static public void onRenderTick(TickEvent.RenderTickEvent event) {
