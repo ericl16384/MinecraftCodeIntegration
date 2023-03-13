@@ -33,8 +33,8 @@ public class WorldInterface {
             y = player.getY();
             z = player.getZ();
 
-            yaw = player.getXRot();
-            pitch = player.getYRot();
+            yaw = player.getYRot();
+            pitch = player.getXRot();
 
             ExampleMod.LOGGER.debug("Current position: X=" + x + " Y=" + y + " Z=" + z);
             ExampleMod.LOGGER.debug("Current angles: YAW=" + yaw + " PITCH=" + pitch);
