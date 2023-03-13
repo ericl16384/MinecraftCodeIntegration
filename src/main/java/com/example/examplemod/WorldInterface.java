@@ -18,7 +18,7 @@ public class WorldInterface {
     static double z;
 
     @SubscribeEvent
-    public void onClientTick(TickEvent.ClientTickEvent event) {
+    public static void onClientTick(TickEvent.ClientTickEvent event) {
         if (event.phase == TickEvent.Phase.START) {
             LocalPlayer player = Minecraft.getInstance().player;
 

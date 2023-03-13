@@ -39,7 +39,7 @@ public class MovementInterface {
 
 
 //    @SubscribeEvent(priority = EventPriority.LOWEST)
-//    public void onMovementInputUpdateEvent(MovementInputUpdateEvent event) {
+//    public static void onMovementInputUpdateEvent(MovementInputUpdateEvent event) {
 //        Input input = event.getInput();
 //
 //        ExampleMod.LOGGER.info("W=" + input.up + " A=" + input.left + " S=" + input.down + " D=" + input.right);
