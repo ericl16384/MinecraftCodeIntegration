@@ -9,7 +9,7 @@ import net.minecraftforge.fml.common.Mod;
 
 import static com.example.examplemod.ExampleMod.MODID;
 
-@Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+@Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 public class WorldInterface {
     // get postion, chunks, inventory, health, status effects
 

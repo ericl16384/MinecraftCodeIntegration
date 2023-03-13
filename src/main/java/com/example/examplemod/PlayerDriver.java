@@ -12,7 +12,7 @@ import java.util.Date;
 
 import static com.example.examplemod.ExampleMod.MODID;
 
-@Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+@Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 public class PlayerDriver {
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
