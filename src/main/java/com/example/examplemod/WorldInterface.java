@@ -27,6 +27,10 @@ public class WorldInterface {
 
     public static void update() {
         LocalPlayer player = Minecraft.getInstance().player;
+        if(player == null) {
+            ExampleMod.LOGGER.warn("WorldInterface - player is null");
+            return;
+        }
 
         if (player != null) {
             x = player.getX();

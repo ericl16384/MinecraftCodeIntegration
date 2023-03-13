@@ -61,6 +61,10 @@ public class MovementInterface {
         if (!active) { wasActive = false; return; }
 
         LocalPlayer player = Minecraft.getInstance().player;
+        if(player == null) {
+            ExampleMod.LOGGER.warn("MovementInterface - player is null");
+            return;
+        }
 
         // position
         // TODO replace with editing the player
