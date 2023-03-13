@@ -2,15 +2,9 @@ package com.example.examplemod;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
-
-import static com.example.examplemod.ExampleMod.MODID;
 
 // TODO upgrade movement input from global keypresses (options below)
 // - local keypresses (keypresses sent to the Minecraft instance)

@@ -8,9 +8,9 @@ import net.minecraftforge.fml.common.Mod;
 //import net.minecraft.client.settings.KeyBinding;
 //import net.minecraftforge.fml.client.registry.ClientRegistry;
 
-import static com.example.examplemod.ExampleMod.MODID;
+import static com.example.examplemod.ExampleMod.MOD_ID;
 
-@Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
+@Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 public class PlayerDriver {
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
@@ -31,6 +31,11 @@ public class PlayerDriver {
         }
     }
 
+
+
+    static double targetX = 0;
+    static double targetZ = 0;
+
     public static void update() {
 //        MovementInterface.forward = true;
 //        MovementInterface.active = WorldInterface.x < 0;
@@ -38,10 +43,6 @@ public class PlayerDriver {
 
 //        MovementInterface.active = true;
 //        MovementInterface.forward = WorldInterface.x < 0;
-
-
-        double targetX = 0;
-        double targetZ = 0;
 
         double displacementX = targetX - WorldInterface.x;
         double displacementZ = targetZ - WorldInterface.z;
