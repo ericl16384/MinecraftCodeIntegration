@@ -17,6 +17,9 @@ public class WorldInterface {
     static double y;
     static double z;
 
+    static float yaw;
+    static float pitch;
+
 //    @SubscribeEvent
 //    public static void onClientTick(TickEvent.ClientTickEvent event) {
 //        update();
@@ -30,7 +33,11 @@ public class WorldInterface {
             y = player.getY();
             z = player.getZ();
 
+            yaw = player.getXRot();
+            pitch = player.getYRot();
+
             ExampleMod.LOGGER.debug("Current position: X=" + x + " Y=" + y + " Z=" + z);
+            ExampleMod.LOGGER.debug("Current angles: YAW=" + yaw + " PITCH=" + pitch);
         }
     }
 }
