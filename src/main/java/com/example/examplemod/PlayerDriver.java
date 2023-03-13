@@ -1,6 +1,5 @@
 package com.example.examplemod;
 
-import com.example.examplemod.util.Math;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -9,10 +8,6 @@ import net.minecraftforge.fml.common.Mod;
 //import net.minecraft.client.settings.KeyBinding;
 //import net.minecraftforge.fml.client.registry.ClientRegistry;
 
-import java.awt.*;
-import java.util.Date;
-
-import static com.example.examplemod.ExampleMod.LOGGER;
 import static com.example.examplemod.ExampleMod.MODID;
 
 @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
@@ -49,7 +44,7 @@ public class PlayerDriver {
         double displacementX = targetX - WorldInterface.x;
         double displacementZ = targetZ - WorldInterface.z;
 
-        double dotProduct = Math.dot(WorldInterface.facingX2, WorldInterface.facingZ2, displacementX, displacementZ);
+        double dotProduct = MathUtil.dot(WorldInterface.facingX2, WorldInterface.facingZ2, displacementX, displacementZ);
 
         ExampleMod.LOGGER.debug("" + dotProduct);
 

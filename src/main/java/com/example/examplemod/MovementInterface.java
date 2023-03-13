@@ -54,7 +54,7 @@ public class MovementInterface {
     // put inventory stuff etc.
 //    static void hotbar
 
-    public static void update() {
+    static void update() {
 //        if (!hasFocus()) { return; }
 
         if (!active) { wasActive = false; return; }

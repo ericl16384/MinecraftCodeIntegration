@@ -11,8 +11,8 @@ public class WorldInterface {
     static double y;
     static double z;
 
-    static float yawDegrees;
-    static float pitchDegrees;
+    static float yawMinecraftDegrees;
+    static float pitchMinecraftDegrees;
     static double yawRadians;
     static double pitchRadians;
 
@@ -33,16 +33,16 @@ public class WorldInterface {
             y = player.getY();
             z = player.getZ();
 
-            yawDegrees = player.getYRot();
-            pitchDegrees = player.getXRot();
-            yawRadians = Math.toRadians(yawDegrees);
-            pitchRadians = Math.toRadians(pitchDegrees);
+            yawMinecraftDegrees = player.getYRot();
+            pitchMinecraftDegrees = player.getXRot();
+            yawRadians = MathUtil.convertMinecraftDegreesToRadians(yawMinecraftDegrees);
+            pitchRadians = MathUtil.convertMinecraftDegreesToRadians(pitchMinecraftDegrees);
 
             facingX2 = Math.cos(yawRadians);
             facingZ2 = Math.sin(yawRadians);
 
             ExampleMod.LOGGER.debug("Current position: X=" + x + " Y=" + y + " Z=" + z);
-            ExampleMod.LOGGER.debug("Current angles: YAW=" + yawDegrees + " PITCH=" + pitchDegrees);
+//            ExampleMod.LOGGER.debug("Current angles: YAW=" + yawDegrees + " PITCH=" + pitchDegrees);
         }
     }
 }
