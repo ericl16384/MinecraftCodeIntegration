@@ -40,6 +40,24 @@ public class PlayerAutopilot {
     static double targetX = 0;
     static double targetZ = 0;
 
+    static boolean blockCenterAligned = true;
+
+    static double getTargetX() {
+        if (blockCenterAligned) {
+            return targetX + 0.5;
+        } else {
+            return targetX;
+        }
+    }
+
+    static double getTargetZ() {
+        if (blockCenterAligned) {
+            return targetZ + 0.5;
+        } else {
+            return targetZ;
+        }
+    }
+
     public static void update() {
 //        MovementInterface.forward = true;
 //        MovementInterface.active = WorldInterface.x < 0;
