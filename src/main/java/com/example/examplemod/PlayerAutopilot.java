@@ -58,9 +58,11 @@ public class PlayerAutopilot {
 
 //        MovementInterface.active = true;
 
-        if (Math.sqrt(Math.pow(displacementX, 2) + Math.pow(displacementZ, 2)) > 0.2) {
+        if (Math.sqrt(Math.pow(displacementX, 2) + Math.pow(displacementZ, 2)) > 0.1) {
             MovementInterface.forward = true;
             MovementInterface.yaw = Math.atan2(displacementZ, displacementX);
+        } else {
+            MovementInterface.stopMovement();
         }
     }
 

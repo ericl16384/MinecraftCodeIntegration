@@ -50,6 +50,15 @@ public class MovementInterface {
     // put inventory stuff etc.
 //    static void hotbar
 
+    static void stopMovement() {
+        forward = false;
+        left = false;
+        back = false;
+        right = false;
+        jump = false;
+//        crouch = false;
+    }
+
     static void update() {
 //        if (!hasFocus()) { return; }
 //        if (!active) { wasActive = false; return; }
