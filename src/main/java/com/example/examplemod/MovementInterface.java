@@ -1,11 +1,6 @@
 package com.example.examplemod;
 
-import net.minecraft.client.player.Input;
-import net.minecraftforge.client.event.MovementInputUpdateEvent;
-import net.minecraftforge.eventbus.api.EventPriority;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-
-public class InputInterface {
+public class MovementInterface {
     // whether it is in control
     static boolean active = false;
     static boolean blockUser = true;
