@@ -1,5 +1,11 @@
 package com.example.examplemod;
 
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.fml.common.Mod;
+
+import static com.example.examplemod.ExampleMod.MODID;
+
+@Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class MovementInterface {
     // whether it is in control
     static boolean active = false;
