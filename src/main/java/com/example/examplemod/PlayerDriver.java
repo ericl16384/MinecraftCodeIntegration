@@ -47,13 +47,13 @@ public class PlayerDriver {
         double displacementZ = targetZ - WorldInterface.z;
 
 //        double dotProduct = MathUtil.dot(WorldInterface.facingX2, WorldInterface.facingZ2, displacementX, displacementZ);
-//
 //        ExampleMod.LOGGER.debug("" + dotProduct);
-//
 //        MovementInterface.active = true;
 //        MovementInterface.forward = dotProduct > Math.cos(Math.toRadians(15)); // plus or minus 15 deg
+
         MovementInterface.active = true;
-        MovementInterface.yaw = Math.atan2(targetZ, targetX);
+        MovementInterface.forward = true;
+        MovementInterface.yaw = Math.atan2(displacementZ, displacementX);
     }
 
 //
