@@ -20,8 +20,8 @@ public class MovementInterface {
 //    public static void onClientTick(TickEvent.ClientTickEvent event) throws AWTException { update(); }
 
     // whether it is in control
-    static boolean active = false;
-    static private boolean wasActive = false;
+//    static boolean active = false;
+//    static private boolean wasActive = false;
 
     // TODO implement blocking the user's control
     static boolean blockUser = false;
@@ -52,7 +52,7 @@ public class MovementInterface {
 
     static void update() {
 //        if (!hasFocus()) { return; }
-        if (!active) { wasActive = false; return; }
+//        if (!active) { wasActive = false; return; }
 
         LocalPlayer player = Minecraft.getInstance().player;
         if(player == null) {
@@ -82,7 +82,7 @@ public class MovementInterface {
         // player.setSprinting
 
 
-        wasActive = true;
+//        wasActive = true;
     }
 
 

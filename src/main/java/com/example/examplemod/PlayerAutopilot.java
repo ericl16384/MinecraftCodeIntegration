@@ -11,7 +11,7 @@ import net.minecraftforge.fml.common.Mod;
 import static com.example.examplemod.ExampleMod.MOD_ID;
 
 @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
-public class PlayerDriver {
+public class PlayerAutopilot {
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
     public static void onServerStarting(ServerStartingEvent event)
@@ -24,7 +24,7 @@ public class PlayerDriver {
     public static void onClientTick(TickEvent.ClientTickEvent event) {
 //            ExampleMod.LOGGER.debug("hasFocus=" + hasFocus() + " lastRenderEvent=" + lastRenderEvent);
 
-        if(event.phase == TickEvent.Phase.START) {
+        if(event.phase == TickEvent.Phase.START && active) {
             WorldInterface.update();
             update();
             MovementInterface.update();
@@ -32,6 +32,11 @@ public class PlayerDriver {
     }
 
 
+    public static boolean active = true;
+
+    public static void toggleEnabled() {
+        active = !active;
+    }
 
     static double targetX = 0;
     static double targetZ = 0;
@@ -52,7 +57,7 @@ public class PlayerDriver {
 //        MovementInterface.active = true;
 //        MovementInterface.forward = dotProduct > Math.cos(Math.toRadians(15)); // plus or minus 15 deg
 
-        MovementInterface.active = true;
+//        MovementInterface.active = true;
         MovementInterface.forward = true;
         MovementInterface.yaw = Math.atan2(displacementZ, displacementX);
     }
