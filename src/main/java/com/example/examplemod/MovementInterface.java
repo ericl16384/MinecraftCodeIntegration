@@ -58,15 +58,19 @@ public class MovementInterface {
 
 
 
-    public static void update() throws AWTException {
+    public static void update() {
 //        if (!hasFocus()) { return; }
 
-        Robot robot = new Robot();
+        try {
+            Robot robot = new Robot();
 
-        if (forward) {
-            robot.keyPress(KeyEvent.VK_W);
-        } else {
-            robot.keyRelease(KeyEvent.VK_W);
+            if (forward) {
+                robot.keyPress(KeyEvent.VK_W);
+            } else {
+                robot.keyRelease(KeyEvent.VK_W);
+            }
+        } catch (AWTException e) {
+            ExampleMod.LOGGER.debug("new Robot() failed with AWTException");
         }
     }
 

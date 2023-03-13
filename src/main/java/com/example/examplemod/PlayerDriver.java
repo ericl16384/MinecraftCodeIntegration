@@ -25,7 +25,7 @@ public class PlayerDriver {
     }
 
     @SubscribeEvent
-    public static void onClientTick(TickEvent.ClientTickEvent event) throws AWTException {
+    public static void onClientTick(TickEvent.ClientTickEvent event) {
 //            ExampleMod.LOGGER.debug("hasFocus=" + hasFocus() + " lastRenderEvent=" + lastRenderEvent);
 
         if(event.phase == TickEvent.Phase.START) {
@@ -36,7 +36,7 @@ public class PlayerDriver {
     }
 
     public static void update() {
-        if(WorldInterface.x < 0) {
+        if (WorldInterface.x < 0) {
             MovementInterface.forward = true;
         } else {
             MovementInterface.forward = false;
