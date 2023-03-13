@@ -27,7 +27,7 @@ public class WorldInterface {
                 y = player.getY();
                 z = player.getZ();
 
-                ExampleMod.LOGGER.debug("Current position: X=" + x + " Y=" + y + " Z=" + z);
+//                ExampleMod.LOGGER.debug("Current position: X=" + x + " Y=" + y + " Z=" + z);
             }
         }
     }

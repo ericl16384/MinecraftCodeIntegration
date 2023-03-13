@@ -10,6 +10,7 @@ import net.minecraftforge.fml.common.Mod;
 
 import java.util.Date;
 
+import static com.example.examplemod.ExampleMod.LOGGER;
 import static com.example.examplemod.ExampleMod.MODID;
 
 @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
@@ -22,17 +23,21 @@ public class PlayerDriver {
         ExampleMod.LOGGER.info("HELLO from server starting - PlayerDriver");
     }
 
-//
-//    boolean hasFocus = false;
-//    static long lastRenderEvent = 0;
-//
-//    @SubscribeEvent
-//    static public void onRenderTick(TickEvent.RenderTickEvent event) {
-//        lastRenderEvent = new Date().getTime();
-//    }
-//
-//    static boolean hasFocus() {
-////        return Minecraft.getMinecraft().inGameHasFocus;
-//        return (lastRenderEvent - new Date().getTime()) < 100;
-//    }
+    @SubscribeEvent
+    public static void onClientTick(TickEvent.ClientTickEvent event) {
+        ExampleMod.LOGGER.debug("hasFocus=" + hasFocus());
+    }
+
+
+    static long lastRenderEvent = 0;
+
+    @SubscribeEvent
+    static public void onRenderTick(TickEvent.RenderTickEvent event) {
+        lastRenderEvent = new Date().getTime();
+    }
+
+    static boolean hasFocus() {
+//        return Minecraft.getMinecraft().inGameHasFocus;
+        return (lastRenderEvent - new Date().getTime()) < 100;
+    }
 }
