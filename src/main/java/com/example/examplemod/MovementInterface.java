@@ -25,6 +25,7 @@ public class MovementInterface {
 
     // whether it is in control
     static boolean active = false;
+    static private boolean wasActive = false;
 
     // TODO implement blocking the user's control
     static boolean blockUser = false;
@@ -53,17 +54,10 @@ public class MovementInterface {
     // put inventory stuff etc.
 //    static void hotbar
 
-
-
-
-
-
-
-
     public static void update() {
 //        if (!hasFocus()) { return; }
 
-        if (!active) { return; }
+        if (!active) { wasActive = false; return; }
 
         try {
             Robot robot = new Robot();
@@ -76,6 +70,9 @@ public class MovementInterface {
         } catch (AWTException e) {
             ExampleMod.LOGGER.debug("new Robot() failed with AWTException: " + e.getMessage());
         }
+
+
+        wasActive = true;
     }
 
 
