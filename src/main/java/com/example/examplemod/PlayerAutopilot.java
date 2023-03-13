@@ -32,8 +32,7 @@ public class PlayerAutopilot {
     }
 
 
-    public static boolean active = true;
-
+    public static boolean active = false;
     public static void toggleEnabled() {
         active = !active;
     }
@@ -58,8 +57,11 @@ public class PlayerAutopilot {
 //        MovementInterface.forward = dotProduct > Math.cos(Math.toRadians(15)); // plus or minus 15 deg
 
 //        MovementInterface.active = true;
-        MovementInterface.forward = true;
-        MovementInterface.yaw = Math.atan2(displacementZ, displacementX);
+
+        if (Math.sqrt(Math.pow(displacementX, 2) + Math.pow(displacementZ, 2)) > 0.2) {
+            MovementInterface.forward = true;
+            MovementInterface.yaw = Math.atan2(displacementZ, displacementX);
+        }
     }
 
 //
