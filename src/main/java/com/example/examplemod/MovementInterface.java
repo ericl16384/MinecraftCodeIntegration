@@ -1,12 +1,28 @@
 package com.example.examplemod;
 
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+
+import java.awt.*;
+import java.awt.event.KeyEvent;
 
 import static com.example.examplemod.ExampleMod.MODID;
 
-@Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
+// TODO upgrade movement input from global keypresses (options below)
+// - local keypresses (keypresses sent to the Minecraft instance)
+// - create new keybinds that are code controlled
+// - override keybind states (such as "W" to true or false)
+// - edit the player's movement inputs
+// - edit the player's movement
+// - physically alter the position (DANGEROUS)
+
+//@Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 public class MovementInterface {
+//    @SubscribeEvent
+//    public static void onClientTick(TickEvent.ClientTickEvent event) throws AWTException { update(); }
+
     // whether it is in control
     static boolean active = false;
     static boolean blockUser = false;
@@ -38,6 +54,27 @@ public class MovementInterface {
 
 
 
+
+
+
+
+    public static void update() throws AWTException {
+//        if (!hasFocus()) { return; }
+
+        Robot robot = new Robot();
+
+        if (forward) {
+            robot.keyPress(KeyEvent.VK_W);
+        } else {
+            robot.keyRelease(KeyEvent.VK_W);
+        }
+    }
+
+
+
+
+
+
 //    @SubscribeEvent(priority = EventPriority.LOWEST)
 //    public static void onMovementInputUpdateEvent(MovementInputUpdateEvent event) {
 //        Input input = event.getInput();
@@ -53,15 +90,6 @@ public class MovementInterface {
 //    }
 
 //    public void step() throws AWTException {
-//        Robot robot = new Robot();
-//
-//        if(hasFocus()) {
-//            robot.keyPress(KeyEvent.VK_W);
-//        } else {
-//            robot.keyRelease(KeyEvent.VK_W);
-//        }
-
-
 //
 //
 //        // Get the Minecraft instance

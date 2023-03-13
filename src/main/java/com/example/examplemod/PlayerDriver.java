@@ -8,6 +8,7 @@ import net.minecraftforge.fml.common.Mod;
 //import net.minecraft.client.settings.KeyBinding;
 //import net.minecraftforge.fml.client.registry.ClientRegistry;
 
+import java.awt.*;
 import java.util.Date;
 
 import static com.example.examplemod.ExampleMod.LOGGER;
@@ -24,11 +25,25 @@ public class PlayerDriver {
     }
 
     @SubscribeEvent
-    public static void onClientTick(TickEvent.ClientTickEvent event) {
-        ExampleMod.LOGGER.debug("hasFocus=" + hasFocus() + " lastRenderEvent=" + lastRenderEvent);
+    public static void onClientTick(TickEvent.ClientTickEvent event) throws AWTException {
+//            ExampleMod.LOGGER.debug("hasFocus=" + hasFocus() + " lastRenderEvent=" + lastRenderEvent);
+
+        if(event.phase == TickEvent.Phase.START) {
+            WorldInterface.update();
+            update();
+            MovementInterface.update();
+        }
     }
 
+    public static void update() {
+        if(WorldInterface.x < 0) {
+            MovementInterface.forward = true;
+        } else {
+            MovementInterface.forward = false;
+        }
+    }
 
+//
 //    static long lastRenderEvent = Long.MAX_VALUE;
 //
 //    @SubscribeEvent

@@ -9,7 +9,7 @@ import net.minecraftforge.fml.common.Mod;
 
 import static com.example.examplemod.ExampleMod.MODID;
 
-@Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
+//@Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 public class WorldInterface {
     // get postion, chunks, inventory, health, status effects
 
@@ -17,18 +17,20 @@ public class WorldInterface {
     static double y;
     static double z;
 
-    @SubscribeEvent
-    public static void onClientTick(TickEvent.ClientTickEvent event) {
-        if (event.phase == TickEvent.Phase.START) {
-            LocalPlayer player = Minecraft.getInstance().player;
+//    @SubscribeEvent
+//    public static void onClientTick(TickEvent.ClientTickEvent event) {
+//        update();
+//    }
 
-            if (player != null) {
-                x = player.getX();
-                y = player.getY();
-                z = player.getZ();
+    public static void update() {
+        LocalPlayer player = Minecraft.getInstance().player;
 
-//                ExampleMod.LOGGER.debug("Current position: X=" + x + " Y=" + y + " Z=" + z);
-            }
+        if (player != null) {
+            x = player.getX();
+            y = player.getY();
+            z = player.getZ();
+
+            ExampleMod.LOGGER.debug("Current position: X=" + x + " Y=" + y + " Z=" + z);
         }
     }
 }
