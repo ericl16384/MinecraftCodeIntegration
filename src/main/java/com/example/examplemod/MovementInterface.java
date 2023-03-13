@@ -70,7 +70,7 @@ public class MovementInterface {
                 robot.keyRelease(KeyEvent.VK_W);
             }
         } catch (AWTException e) {
-            ExampleMod.LOGGER.debug("new Robot() failed with AWTException");
+            ExampleMod.LOGGER.debug("new Robot() failed with AWTException: " + e.getMessage());
         }
     }
 
