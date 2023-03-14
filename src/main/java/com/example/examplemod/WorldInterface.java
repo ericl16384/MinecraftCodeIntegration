@@ -25,6 +25,10 @@ public class WorldInterface {
 //        update();
 //    }
 
+//    public static getChunkAtPos(x, z) {
+//
+//    }
+
     public static void update() {
         LocalPlayer player = Minecraft.getInstance().player;
         if(player == null) {
