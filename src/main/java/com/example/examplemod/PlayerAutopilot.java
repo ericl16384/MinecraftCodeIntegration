@@ -39,6 +39,7 @@ public class PlayerAutopilot {
 
     static double targetX = 0;
     static double targetZ = 0;
+    static double targetTolerance = 0.3; // the space where a Minecraft player fits between blocks
 
     static boolean blockCenterAligned = true;
 
@@ -66,8 +67,8 @@ public class PlayerAutopilot {
 //        MovementInterface.active = true;
 //        MovementInterface.forward = WorldInterface.x < 0;
 
-        double displacementX = targetX - WorldInterface.x;
-        double displacementZ = targetZ - WorldInterface.z;
+        double displacementX = getTargetX() - WorldInterface.x;
+        double displacementZ = getTargetZ() - WorldInterface.z;
 
 //        double dotProduct = MathUtil.dot(WorldInterface.facingX2, WorldInterface.facingZ2, displacementX, displacementZ);
 //        ExampleMod.LOGGER.debug("" + dotProduct);
@@ -76,7 +77,7 @@ public class PlayerAutopilot {
 
 //        MovementInterface.active = true;
 
-        if (Math.sqrt(Math.pow(displacementX, 2) + Math.pow(displacementZ, 2)) > 0.1) {
+        if (Math.sqrt(Math.pow(displacementX, 2) + Math.pow(displacementZ, 2)) > targetTolerance) {
             MovementInterface.forward = true;
             MovementInterface.yaw = Math.atan2(displacementZ, displacementX);
         } else {
