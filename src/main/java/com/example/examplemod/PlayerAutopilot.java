@@ -1,5 +1,6 @@
 package com.example.examplemod;
 
+import net.minecraft.client.Minecraft;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -25,9 +26,11 @@ public class PlayerAutopilot {
 //            ExampleMod.LOGGER.debug("hasFocus=" + hasFocus() + " lastRenderEvent=" + lastRenderEvent);
 
         if(event.phase == TickEvent.Phase.START && active) {
-            WorldInterface.update();
-            update();
-            MovementInterface.update();
+            if(Minecraft.getInstance().player != null) {
+                WorldInterface.update();
+                update();
+                MovementInterface.update();
+            }
         }
     }
 

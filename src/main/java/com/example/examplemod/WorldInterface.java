@@ -2,6 +2,10 @@ package com.example.examplemod;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Vec3i;
+import net.minecraft.world.level.ChunkPos;
+import net.minecraft.world.phys.Vec2;
 
 //@Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 public class WorldInterface {
@@ -25,16 +29,13 @@ public class WorldInterface {
 //        update();
 //    }
 
-//    public static getChunkAtPos(x, z) {
-//
-//    }
+    public static ChunkPos getChunkFromPlayer() {
+        LocalPlayer player = Minecraft.getInstance().player;
+        return player.chunkPosition();
+    }
 
     public static void update() {
         LocalPlayer player = Minecraft.getInstance().player;
-        if(player == null) {
-            ExampleMod.LOGGER.warn("WorldInterface - player is null");
-            return;
-        }
 
         if (player != null) {
             x = player.getX();
