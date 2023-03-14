@@ -9,6 +9,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.RegisterClientCommandsEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -77,14 +78,14 @@ public class ExampleMod {
     }
 
     @SubscribeEvent
-    public static void registerCommands(RegisterCommandsEvent event) {
+    public static void registerClientCommandsEvent(RegisterClientCommandsEvent event) {
 //        CommandDispatcher<CommandSourceStack> dispatcher = event.getDispatcher();
 
         // Register the command
         AutopilotCommand.register(event.getDispatcher());
 //        AutopilotCommand myCommand = new AutopilotCommand();
 //        dispatcher.register(AutopilotCommand.getCommandLiteral(), AutopilotCommand.getCommand());
-        
+
         LOGGER.info("Registering commands");
     }
 
