@@ -1,6 +1,6 @@
 package com.example.examplemod;
 
-import com.example.examplemod.commands.AutopilotCommand;
+//import com.example.examplemod.commands.AutopilotCommand;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
