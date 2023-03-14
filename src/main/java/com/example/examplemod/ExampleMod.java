@@ -84,6 +84,8 @@ public class ExampleMod {
         AutopilotCommand.register(event.getDispatcher());
 //        AutopilotCommand myCommand = new AutopilotCommand();
 //        dispatcher.register(AutopilotCommand.getCommandLiteral(), AutopilotCommand.getCommand());
+        
+        LOGGER.info("Registering commands");
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
