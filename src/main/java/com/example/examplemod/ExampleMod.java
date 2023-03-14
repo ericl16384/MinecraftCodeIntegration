@@ -25,6 +25,8 @@ import org.slf4j.Logger;
 
 // TODO crash if used in a server, rather than client (can be removed when input method is not Robot, which requires non-headless)
 
+// TODO https://forums.minecraftforge.net/topic/79138-1144simulate-mouse-and-keyboard-input/
+
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(ExampleMod.MOD_ID)
 public class ExampleMod {

@@ -1,10 +1,12 @@
 package com.example.examplemod;
 
+import com.mojang.authlib.minecraft.client.MinecraftClient;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Vec3i;
 import net.minecraft.world.level.ChunkPos;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec2;
 
 //@Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
@@ -33,6 +35,10 @@ public class WorldInterface {
         LocalPlayer player = Minecraft.getInstance().player;
         return player.chunkPosition();
     }
+
+//    public static BlockState getBlockAtPosition(BlockPos pos) {
+//        Minecraft.getInstance()
+//    }
 
     public static void update() {
         LocalPlayer player = Minecraft.getInstance().player;
