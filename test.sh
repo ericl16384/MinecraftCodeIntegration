@@ -22,6 +22,8 @@ git status
 
 echo "Type commit message to commit and push."
 IFS= read -r -e msg
+echo "Starting commit and push."
+
 git commit -m "$msg"
 git push
 

@@ -1,12 +1,16 @@
 package com.example.examplemod;
 
+import com.example.examplemod.commands.AutopilotCommand;
+import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
+import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -70,6 +74,16 @@ public class ExampleMod {
     {
         // Do something when the server starts
         LOGGER.info("HELLO from server starting");
+    }
+
+    @SubscribeEvent
+    public static void registerCommands(RegisterCommandsEvent event) {
+//        CommandDispatcher<CommandSourceStack> dispatcher = event.getDispatcher();
+
+        // Register the command
+        AutopilotCommand.register(event.getDispatcher());
+//        AutopilotCommand myCommand = new AutopilotCommand();
+//        dispatcher.register(AutopilotCommand.getCommandLiteral(), AutopilotCommand.getCommand());
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
