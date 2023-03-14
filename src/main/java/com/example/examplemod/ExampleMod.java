@@ -77,17 +77,18 @@ public class ExampleMod {
         LOGGER.info("HELLO from server starting");
     }
 
-    @SubscribeEvent
-    public static void registerClientCommandsEvent(RegisterClientCommandsEvent event) {
-//        CommandDispatcher<CommandSourceStack> dispatcher = event.getDispatcher();
-
-        // Register the command
-        AutopilotCommand.register(event.getDispatcher());
-//        AutopilotCommand myCommand = new AutopilotCommand();
-//        dispatcher.register(AutopilotCommand.getCommandLiteral(), AutopilotCommand.getCommand());
-
-        LOGGER.info("Registering commands");
-    }
+    // TODO maybe?
+//    @SubscribeEvent
+//    public static void registerClientCommandsEvent(RegisterClientCommandsEvent event) {
+////        CommandDispatcher<CommandSourceStack> dispatcher = event.getDispatcher();
+//
+//        // Register the command
+//        AutopilotCommand.register(event.getDispatcher());
+////        AutopilotCommand myCommand = new AutopilotCommand();
+////        dispatcher.register(AutopilotCommand.getCommandLiteral(), AutopilotCommand.getCommand());
+//
+//        LOGGER.info("Registering commands");
+//    }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)

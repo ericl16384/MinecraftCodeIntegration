@@ -37,8 +37,8 @@ public class PlayerAutopilot {
         active = !active;
     }
 
-    static double targetX = 0;
-    static double targetZ = 0;
+    static double targetX = 3;
+    static double targetZ = 5;
     static double targetTolerance = 0.3; // the space where a Minecraft player fits between blocks
 
     static boolean blockCenterAligned = true;
